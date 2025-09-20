@@ -52,21 +52,3 @@ Your project includes two vulnerability scanner files:
 
 Move the `vulnerability_checks_fast.py` from Mode Change to the same directory as `main.py` for fast mode
 Leave the `vulnerability_checks_fast.py` in Mode Change for comprehensive mode
-
-## Project Structure
-├── advanced_scanner.py
-├── content_analyzer.py
-├── main.py
-├── port_scanner.py
-├── requirements.txt
-├── security_headers.py
-├── tasks.py
-├── tls_analyzer.py
-├── vulnerability_checks_comprehensive.py # Comprehensive scanner version (switch by renaming)
-├── Mode Change/
-│  └──vulnerability_checks_fast.py # Fast scanner version (switch by renaming)
-├── static/
-│  ├── css/
-│  ├── js/
-│  └── index.html
-└── README.md
