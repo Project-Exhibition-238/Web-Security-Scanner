@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Security Scanner</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Web Security Scanner</h1>
+            <p class="subtitle">Comprehensive security analysis for modern web applications</p>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Input Section -->
+            <div id="input-section" class="section">
+                <div class="form-group">
+                    <label for="url-input">Target URL</label>
+                    <input type="url" id="url-input" placeholder="Enter target URL (e.g., https://example.com)" required>
+                </div>
+
+                <div class="scan-options">
+                    <h3>Scan Categories</h3>
+                    <div class="checkbox-grid">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="security-headers" value="Security Headers" checked>
+                            <label for="security-headers">Security Headers</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="tls-analysis" value="TLS/SSL Analysis" checked>
+                            <label for="tls-analysis">TLS/SSL Analysis</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="vulnerabilities" value="Vulnerabilities" checked>
+                            <label for="vulnerabilities">Vulnerabilities</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="advanced-checks" value="Advanced Checks" checked>
+                            <label for="advanced-checks">Advanced Checks</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="content-analysis" value="Content Analysis" checked>
+                            <label for="content-analysis">Content Analysis</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="port-scanning" value="Port Scanning" checked>
+                            <label for="port-scanning">Port Scanning</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="start-scan-btn" class="scan-button">
+                    <!-- <span class="button-icon">🛡️</span> -->
+                    Start Security Scan
+                </button>
+            </div>
+
+            <!-- Progress Section -->
+            <div id="progress-section" class="section" style="display: none;">
+                <h2>Scanning in Progress</h2>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="progress-percentage">18%</span>
+                    </div>
+                </div>
+                <p id="progress-status" class="progress-status">Checking DNS resolution...</p>
+                <button id="cancel-scan-btn" class="cancel-button">Cancel Scan</button>
+            </div>
+
+            <!-- Results Section -->
+            <div id="results-section" class="section" style="display: none;">
+                <div class="results-header">
+                    <h2>Scan Results</h2>
+                    <button id="new-scan-btn" class="new-scan-button">New Scan</button>
+                </div>
+
+                <div class="severity-summary">
+                    <div class="severity-badge critical">
+                        <div class="severity-number" id="critical-count">1</div>
+                        <div class="severity-label">Critical</div>
+                    </div>
+                    <div class="severity-badge high">
+                        <div class="severity-number" id="high-count">4</div>
+                        <div class="severity-label">High</div>
+                    </div>
+                    <div class="severity-badge medium">
+                        <div class="severity-number" id="medium-count">6</div>
+                        <div class="severity-label">Medium</div>
+                    </div>
+                    <div class="severity-badge low">
+                        <div class="severity-number" id="low-count">3</div>
+                        <div class="severity-label">Low</div>
+                    </div>
+                    <div class="severity-badge info">
+                        <div class="severity-number" id="info-count">5</div>
+                        <div class="severity-label">Info</div>
+                    </div>
+                </div>
+
+                <!-- Tab Navigation -->
+                <div class="tab-navigation">
+                    <button class="tab-button active" data-tab="security-headers">Security Headers</button>
+                    <button class="tab-button" data-tab="tls-analysis">TLS/SSL Analysis</button>
+                    <button class="tab-button" data-tab="vulnerabilities">Vulnerabilities</button>
+                    <button class="tab-button" data-tab="advanced-checks">Advanced Checks</button>
+                    <button class="tab-button" data-tab="content-analysis">Content Analysis</button>
+                    <button class="tab-button" data-tab="port-scanning">Port Scanning</button>
+                </div>
+
+                <!-- Results Content -->
+                <div class="results-content" id="results-content">
+                    <div class="finding-item">
+                        <div class="finding-header">
+                            <h4>Missing Content Security Policy</h4>
+                            <span class="severity-tag high">HIGH</span>
+                        </div>
+                        <p class="finding-description">No CSP header found, site vulnerable to XSS attacks</p>
+                    </div>
+
+                    <div class="finding-item">
+                        <div class="finding-header">
+                            <h4>X-Frame-Options not set</h4>
+                            <span class="severity-tag medium">MEDIUM</span>
+                        </div>
+                        <p class="finding-description">Site may be vulnerable to clickjacking attacks</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
