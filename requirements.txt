@@ -1,0 +1,25 @@
+# Core web framework and async processing
+Flask==2.3.3
+flask-cors==4.0.0
+celery==5.3.4
+redis==5.0.1
+
+# HTTP requests and web scraping
+requests==2.31.0
+beautifulsoup4==4.12.2
+lxml==4.9.3
+
+# DNS resolution for subdomain enumeration
+dnspython==2.4.2
+
+# SSL/TLS analysis
+pyOpenSSL==23.3.0
+cryptography==41.0.7
+
+# Development and testing
+python-dotenv==1.0.0
+gunicorn==21.2.0
+
+# Optional: For enhanced functionality
+# urllib3==2.0.7
+# certifi==2023.7.22
