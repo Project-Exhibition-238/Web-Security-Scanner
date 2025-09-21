@@ -50,5 +50,5 @@ Your project includes two vulnerability scanner files:
 
 **To switch between modes:**
 
-Move the `vulnerability_checks_fast.py` from Mode Change to the same directory as `main.py` for fast mode
-Leave the `vulnerability_checks_fast.py` in Mode Change for comprehensive mode
+Move the `vulnerability_checks_fast.py` from Mode Change to the same directory as `main.py` for fast mode.
+Leave the `vulnerability_checks_fast.py` in Mode Change for comprehensive mode.
